@@ -2,41 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* GMassMailer Design System - Inspired by colorful M logo */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 255 255 255;
+    --foreground: 217 33% 17%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 255 255 255;
+    --card-foreground: 217 33% 17%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 255 255 255;
+    --popover-foreground: 217 33% 17%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary gradient colors from logo */
+    --primary: 290 87% 60%; /* Vibrant purple */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 290 87% 70%;
+    --primary-dark: 290 87% 50%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary colors from logo */
+    --secondary: 180 100% 50%; /* Cyan */
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 180 100% 60%;
+
+    --accent: 25 100% 60%; /* Orange */
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 25 100% 70%;
+
+    --success: 145 63% 49%; /* Green */
+    --success-foreground: 0 0% 100%;
+
+    --pink: 330 81% 60%; /* Pink from logo */
+    --pink-foreground: 0 0% 100%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 290 87% 60%;
 
-    --radius: 0.5rem;
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--primary)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--pink)));
+    --gradient-rainbow: linear-gradient(90deg, hsl(var(--secondary)), hsl(var(--success)), hsl(var(--accent)), hsl(var(--pink)), hsl(var(--primary)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
