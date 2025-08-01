@@ -32,13 +32,13 @@ const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({ children }) 
         <div className="flex-1 flex flex-col bg-background">
           {/* Top Header */}
           <header className="bg-white shadow-sm border-b h-14 flex items-center justify-between px-4">
-            <div className="flex items-center gap-4 w-full">
+            <div className="flex items-center gap-4 w-full max-w-xl">
               <SidebarTrigger variant="ghost" size="icon" className="p-2 rounded-md">
                 <Menu className="w-5 h-5" />
               </SidebarTrigger>
               <Input
                 type="text"
-                placeholder="search campaigns..."
+                placeholder="Search Campaigns..."
                 className="hidden lg:flex w-full h-9"
               />
             </div>
