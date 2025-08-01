@@ -88,11 +88,13 @@ export function AppSidebar() {
 
   const isActive = (path: string) => currentPath === path;
   const getNavCls = ({ isActive }: { isActive: boolean }) =>
-    isActive ? 'bg-primary text-primary-foreground font-medium' : 'hover:bg-muted/50';
+    isActive 
+      ? 'bg-primary text-primary-foreground font-medium shadow-md' 
+      : 'hover:bg-primary/10 hover:text-primary transition-colors duration-200';
 
   return (
-    <Sidebar className={collapsed ? 'w-14' : 'w-64'} collapsible="icon">
-      <SidebarContent className="flex flex-col h-full">
+    <Sidebar className="border-r bg-white" collapsible="icon">
+      <SidebarContent className="flex flex-col h-full bg-white">
         {/* Logo Section */}
         <div className="p-4 border-b">
           {!collapsed ? (
@@ -151,10 +153,19 @@ export function AppSidebar() {
             <SidebarMenu>
               {menuItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
+                  <SidebarMenuButton 
+                    asChild 
+                    className="group relative"
+                    title={collapsed ? item.title : undefined}
+                  >
                     <NavLink to={item.url} className={getNavCls}>
-                      <item.icon className="w-4 h-4" />
-                      {!collapsed && <span>{item.title}</span>}
+                      <item.icon className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                      {!collapsed && <span className="group-hover:translate-x-1 transition-transform">{item.title}</span>}
+                      {collapsed && (
+                        <span className="absolute left-12 bg-card border rounded-md px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">
+                          {item.title}
+                        </span>
+                      )}
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
@@ -196,10 +207,19 @@ export function AppSidebar() {
             <SidebarMenu>
               {bottomMenuItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
+                  <SidebarMenuButton 
+                    asChild 
+                    className="group relative"
+                    title={collapsed ? item.title : undefined}
+                  >
                     <NavLink to={item.url} className={getNavCls}>
-                      <item.icon className="w-4 h-4" />
-                      {!collapsed && <span>{item.title}</span>}
+                      <item.icon className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                      {!collapsed && <span className="group-hover:translate-x-1 transition-transform">{item.title}</span>}
+                      {collapsed && (
+                        <span className="absolute left-12 bg-card border rounded-md px-2 py-1 text-xs opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-50">
+                          {item.title}
+                        </span>
+                      )}
                     </NavLink>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

@@ -6,53 +6,53 @@
 
 @layer base {
   :root {
-    --background: 255 255 255;
+    --background: 0 0% 100%;
     --foreground: 217 33% 17%;
 
-    --card: 255 255 255;
+    --card: 0 0% 100%;
     --card-foreground: 217 33% 17%;
 
-    --popover: 255 255 255;
+    --popover: 0 0% 100%;
     --popover-foreground: 217 33% 17%;
 
     /* Primary gradient colors from logo */
-    --primary: 290 87% 60%; /* Vibrant purple */
+    --primary: 290 87% 60%;
     --primary-foreground: 0 0% 100%;
     --primary-light: 290 87% 70%;
     --primary-dark: 290 87% 50%;
 
     /* Secondary colors from logo */
-    --secondary: 180 100% 50%; /* Cyan */
+    --secondary: 180 100% 50%;
     --secondary-foreground: 0 0% 100%;
     --secondary-light: 180 100% 60%;
 
-    --accent: 25 100% 60%; /* Orange */
+    --accent: 25 100% 60%;
     --accent-foreground: 0 0% 100%;
     --accent-light: 25 100% 70%;
 
-    --success: 145 63% 49%; /* Green */
+    --success: 145 63% 49%;
     --success-foreground: 0 0% 100%;
 
-    --pink: 330 81% 60%; /* Pink from logo */
+    --pink: 330 81% 60%;
     --pink-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 40% 98%;
+    --muted-foreground: 215 16% 47%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
     --ring: 290 87% 60%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--primary)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--pink)));
-    --gradient-rainbow: linear-gradient(90deg, hsl(var(--secondary)), hsl(var(--success)), hsl(var(--accent)), hsl(var(--pink)), hsl(var(--primary)));
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
-
     --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(180 100% 50%), hsl(290 87% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(25 100% 60%), hsl(330 81% 60%));
+    --gradient-rainbow: linear-gradient(90deg, hsl(180 100% 50%), hsl(145 63% 49%), hsl(25 100% 60%), hsl(330 81% 60%), hsl(290 87% 60%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 40% 98%));
 
     --sidebar-background: 0 0% 98%;
 

@@ -11,10 +11,10 @@ const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({ children }) 
 
   return (
     <SidebarProvider>
-      <div className="min-h-screen flex w-full bg-gradient-subtle">
+      <div className="min-h-screen flex w-full bg-background">
         <AppSidebar />
         
-        <div className="flex-1 flex flex-col">
+        <div className="flex-1 flex flex-col bg-background">
           {/* Top Header */}
           <header className="bg-white shadow-sm border-b h-14 flex items-center justify-between px-4">
             <SidebarTrigger className="hover:bg-muted p-2 rounded-md">

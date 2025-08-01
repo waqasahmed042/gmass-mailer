@@ -95,7 +95,7 @@ const Dashboard = () => {
   const usagePercentage = user ? (user.emailsSent / (user.emailLimit === Infinity ? 10000 : user.emailLimit)) * 100 : 0;
 
   const dashboardContent = (
-    <div className="p-6 max-w-7xl mx-auto">
+    <div className="p-6 max-w-7xl mx-auto bg-background min-h-full">
       {/* Welcome Section */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-foreground mb-2">
