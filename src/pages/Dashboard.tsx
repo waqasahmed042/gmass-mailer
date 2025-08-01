@@ -6,19 +6,18 @@ import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import DashboardLayout from '@/components/DashboardLayout';
 import { useAuth } from '@/contexts/AuthContext';
-import { 
-  Mail, 
-  Send, 
-  Clock, 
-  CheckCircle, 
-  BarChart3, 
+import {
+  Mail,
+  Send,
+  CheckCircle,
+  BarChart3,
   Plus,
   CreditCard,
   Settings,
   TrendingUp
 } from 'lucide-react';
 
-const Dashboard = () => {
+const Dashboard: React.FC = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
 
@@ -219,7 +218,7 @@ const Dashboard = () => {
                     <p className="text-sm text-muted-foreground">{campaign.date}</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center space-x-6">
                   <div className="text-center">
                     <p className="text-sm font-medium">{campaign.sent}</p>

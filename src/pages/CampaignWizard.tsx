@@ -10,9 +10,9 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Switch } from '@/components/ui/switch';
 import { useAuth } from '@/contexts/AuthContext';
-import { 
-  ArrowLeft, 
-  ArrowRight, 
+import {
+  ArrowLeft,
+  ArrowRight,
   Upload,
   Mail,
   Clock,
@@ -26,7 +26,7 @@ import {
   RefreshCw
 } from 'lucide-react';
 
-const CampaignWizard = () => {
+const CampaignWizard: React.FC = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const [currentStep, setCurrentStep] = useState(1);
@@ -100,17 +100,15 @@ const CampaignWizard = () => {
       <div className="flex items-center justify-between mb-4">
         {steps.map((step, index) => (
           <div key={step.number} className="flex items-center">
-            <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
-              currentStep >= step.number 
-                ? 'bg-primary text-primary-foreground' 
-                : 'bg-muted text-muted-foreground'
-            }`}>
+            <div className={`w-10 h-10 rounded-full flex items-center justify-center ${currentStep >= step.number
+              ? 'bg-primary text-primary-foreground'
+              : 'bg-muted text-muted-foreground'
+              }`}>
               <step.icon className="w-5 h-5" />
             </div>
             {index < steps.length - 1 && (
-              <div className={`w-16 h-1 mx-2 ${
-                currentStep > step.number ? 'bg-primary' : 'bg-muted'
-              }`} />
+              <div className={`w-16 h-1 mx-2 ${currentStep > step.number ? 'bg-primary' : 'bg-muted'
+                }`} />
             )}
           </div>
         ))}
@@ -148,14 +146,14 @@ const CampaignWizard = () => {
                   <p className="text-sm text-muted-foreground">Monitor performance</p>
                 </div>
               </div>
-              
+
               <div className="space-y-4">
                 <Label htmlFor="campaignName">Campaign Name</Label>
                 <Input
                   id="campaignName"
                   placeholder="Enter campaign name"
                   value={campaignData.name}
-                  onChange={(e) => setCampaignData({...campaignData, name: e.target.value})}
+                  onChange={(e) => setCampaignData({ ...campaignData, name: e.target.value })}
                 />
               </div>
             </CardContent>
@@ -178,7 +176,7 @@ const CampaignWizard = () => {
                 <p className="text-muted-foreground mb-4">or click to browse files</p>
                 <Button variant="outline">Choose File</Button>
               </div>
-              
+
               {/* Sample Data Preview */}
               <div>
                 <h3 className="font-semibold mb-4">Preview (Sample Data)</h3>
@@ -227,10 +225,10 @@ const CampaignWizard = () => {
                     id="subject"
                     placeholder="Hi {{First Name}}, Special offer just for you!"
                     value={campaignData.subject}
-                    onChange={(e) => setCampaignData({...campaignData, subject: e.target.value})}
+                    onChange={(e) => setCampaignData({ ...campaignData, subject: e.target.value })}
                   />
                 </div>
-                
+
                 <div>
                   <Label htmlFor="body">Email Body</Label>
                   <Textarea
@@ -238,16 +236,16 @@ const CampaignWizard = () => {
                     rows={12}
                     placeholder="Dear {{First Name}}, I hope this email finds you well at {{Company}}. Best regards, Your Name"
                     value={campaignData.body}
-                    onChange={(e) => setCampaignData({...campaignData, body: e.target.value})}
+                    onChange={(e) => setCampaignData({ ...campaignData, body: e.target.value })}
                   />
                 </div>
-                
+
                 <div className="text-sm text-muted-foreground">
                   <p><strong>Available variables:</strong> {`{{First Name}}, {{Last Name}}, {{Email}}, {{Company}}`}</p>
                 </div>
               </CardContent>
             </Card>
-            
+
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">
@@ -302,7 +300,7 @@ const CampaignWizard = () => {
                   </SelectContent>
                 </Select>
               </div>
-              
+
               <div>
                 <Label htmlFor="dailyLimit">Daily Email Limit</Label>
                 <Input
@@ -316,7 +314,7 @@ const CampaignWizard = () => {
                   Maximum 1000 emails per day for Gmail accounts
                 </p>
               </div>
-              
+
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div>
@@ -325,7 +323,7 @@ const CampaignWizard = () => {
                   </div>
                   <Switch defaultChecked />
                 </div>
-                
+
                 <div className="flex items-center justify-between">
                   <div>
                     <Label>Resume Automatically Next Day</Label>
@@ -359,7 +357,7 @@ const CampaignWizard = () => {
                     <p><strong>Daily Limit:</strong> 500 emails</p>
                   </div>
                 </div>
-                
+
                 <div className="space-y-4">
                   <h3 className="font-semibold">Account Status</h3>
                   <div className="space-y-2 text-sm">
@@ -369,7 +367,7 @@ const CampaignWizard = () => {
                   </div>
                 </div>
               </div>
-              
+
               <div className="bg-accent/10 p-4 rounded-lg">
                 <h4 className="font-semibold text-accent mb-2">⚠️ Important Notice</h4>
                 <ul className="text-sm space-y-1 text-muted-foreground">
@@ -412,7 +410,7 @@ const CampaignWizard = () => {
                     <p className="text-sm text-muted-foreground">Total</p>
                   </div>
                 </div>
-                
+
                 <Progress value={75} className="h-3 mb-4" />
                 <p className="text-center text-sm text-muted-foreground mb-6">
                   75% Complete - Estimated completion in 2 hours
@@ -464,72 +462,74 @@ const CampaignWizard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-subtle">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-4">
-              <Button variant="ghost" onClick={() => navigate('/dashboard')}>
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Exit Wizard
-              </Button>
-              <div className="flex items-center space-x-3">
-                <img 
-                  src="/lovable-uploads/ba1f7687-2cac-439b-9466-bbbb27a70db8.png" 
-                  alt="GMassMailer" 
-                  className="w-8 h-8"
-                />
-                <h1 className="text-xl font-bold text-primary">Campaign Wizard</h1>
+    <>
+      <div className="min-h-screen bg-gradient-subtle">
+        {/* Header */}
+        <header className="bg-white shadow-sm border-b">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center justify-between h-16">
+              <div className="flex items-center space-x-4">
+                <Button variant="ghost" onClick={() => navigate('/dashboard')}>
+                  <ArrowLeft className="w-4 h-4 mr-2" />
+                  Exit Wizard
+                </Button>
+                <div className="flex items-center space-x-3">
+                  <img
+                    src="/gmass-mailer/gmass-mailer-logo.png"
+                    alt="GMassMailer"
+                    className="w-8 h-8"
+                  />
+                  <h1 className="text-xl font-bold text-primary">Campaign Wizard</h1>
+                </div>
+              </div>
+
+              <div className="text-sm text-muted-foreground">
+                Step {currentStep} of {totalSteps}
               </div>
             </div>
-            
-            <div className="text-sm text-muted-foreground">
-              Step {currentStep} of {totalSteps}
+          </div>
+        </header>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <StepIndicator />
+
+          <div className="mb-8">
+            {renderStep()}
+          </div>
+
+          {/* Navigation Buttons */}
+          {currentStep < totalSteps && (
+            <div className="flex justify-between max-w-4xl mx-auto">
+              <Button
+                variant="outline"
+                onClick={prevStep}
+                disabled={currentStep === 1}
+              >
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Previous
+              </Button>
+
+              <Button
+                variant={currentStep === 5 ? "gradient" : "default"}
+                onClick={nextStep}
+              >
+                {currentStep === 5 ? (
+                  <>
+                    <Play className="w-4 h-4 mr-2" />
+                    Launch Campaign
+                  </>
+                ) : (
+                  <>
+                    Next
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </>
+                )}
+              </Button>
             </div>
-          </div>
+          )}
         </div>
-      </header>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <StepIndicator />
-        
-        <div className="mb-8">
-          {renderStep()}
-        </div>
-
-        {/* Navigation Buttons */}
-        {currentStep < totalSteps && (
-          <div className="flex justify-between max-w-4xl mx-auto">
-            <Button
-              variant="outline"
-              onClick={prevStep}
-              disabled={currentStep === 1}
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Previous
-            </Button>
-            
-            <Button
-              variant={currentStep === 5 ? "gradient" : "default"}
-              onClick={nextStep}
-            >
-              {currentStep === 5 ? (
-                <>
-                  <Play className="w-4 h-4 mr-2" />
-                  Launch Campaign
-                </>
-              ) : (
-                <>
-                  Next
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </>
-              )}
-            </Button>
-          </div>
-        )}
       </div>
-    </div>
+    </>
   );
 };
 

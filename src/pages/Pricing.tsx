@@ -6,7 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { useAuth } from '@/contexts/AuthContext';
 import { Check, ArrowLeft, Crown, Mail, Zap, Shield } from 'lucide-react';
 
-const Pricing = () => {
+const Pricing: React.FC = () => {
   const navigate = useNavigate();
   const { user, upgradeToProPlan } = useAuth();
 
@@ -63,8 +63,8 @@ const Pricing = () => {
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-16">
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               onClick={() => navigate(user ? '/dashboard' : '/login')}
               className="mr-4"
             >
@@ -72,9 +72,9 @@ const Pricing = () => {
               Back
             </Button>
             <div className="flex items-center space-x-3">
-              <img 
-                src="/lovable-uploads/ba1f7687-2cac-439b-9466-bbbb27a70db8.png" 
-                alt="GMassMailer" 
+              <img
+                src="/gmass-mailer/gmass-mailer-logo.png"
+                alt="GMassMailer"
                 className="w-8 h-8"
               />
               <h1 className="text-xl font-bold text-primary">GMassMailer</h1>
@@ -90,7 +90,7 @@ const Pricing = () => {
             Choose Your <span className="bg-gradient-rainbow bg-clip-text text-transparent">Plan</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Scale your email campaigns with our flexible pricing options. 
+            Scale your email campaigns with our flexible pricing options.
             Start free and upgrade when you're ready.
           </p>
         </div>
@@ -98,11 +98,10 @@ const Pricing = () => {
         {/* Pricing Cards */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {plans.map((plan, index) => (
-            <Card 
-              key={index} 
-              className={`relative hover:shadow-xl transition-all duration-300 ${
-                plan.popular ? 'border-primary shadow-lg scale-105' : ''
-              } ${plan.current ? 'ring-2 ring-primary' : ''}`}
+            <Card
+              key={index}
+              className={`relative hover:shadow-xl transition-all duration-300 ${plan.popular ? 'border-primary shadow-lg scale-105' : ''
+                } ${plan.current ? 'ring-2 ring-primary' : ''}`}
             >
               {plan.popular && (
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
@@ -112,7 +111,7 @@ const Pricing = () => {
                   </Badge>
                 </div>
               )}
-              
+
               <CardHeader className="text-center pb-8">
                 <CardTitle className="text-2xl font-bold">{plan.name}</CardTitle>
                 <div className="flex items-end justify-center space-x-1">
@@ -123,7 +122,7 @@ const Pricing = () => {
                   {plan.description}
                 </CardDescription>
               </CardHeader>
-              
+
               <CardContent className="space-y-6">
                 <ul className="space-y-3">
                   {plan.features.map((feature, featureIndex) => (
@@ -133,7 +132,7 @@ const Pricing = () => {
                     </li>
                   ))}
                 </ul>
-                
+
                 <Button
                   variant={plan.buttonVariant}
                   size="lg"
@@ -151,7 +150,7 @@ const Pricing = () => {
         {/* Features Comparison */}
         <div className="bg-white rounded-lg shadow-lg p-8">
           <h2 className="text-2xl font-bold text-center mb-8">Why Choose Pro?</h2>
-          
+
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="bg-gradient-primary p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
@@ -162,7 +161,7 @@ const Pricing = () => {
                 Send as many emails as you need without monthly limits
               </p>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-gradient-accent p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <Zap className="w-8 h-8 text-white" />
@@ -172,7 +171,7 @@ const Pricing = () => {
                 A/B testing, custom domains, and priority support
               </p>
             </div>
-            
+
             <div className="text-center">
               <div className="bg-secondary p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                 <Shield className="w-8 h-8 text-white" />

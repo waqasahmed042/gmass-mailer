@@ -10,30 +10,32 @@ const DashboardLayout: React.FC<{ children: React.ReactNode }> = ({ children }) 
   const { logout } = useAuth();
 
   return (
-    <SidebarProvider>
-      <div className="min-h-screen flex w-full bg-background">
-        <AppSidebar />
-        
-        <div className="flex-1 flex flex-col bg-background">
-          {/* Top Header */}
-          <header className="bg-white shadow-sm border-b h-14 flex items-center justify-between px-4">
-            <SidebarTrigger className="hover:bg-muted p-2 rounded-md">
-              <Menu className="w-4 h-4" />
-            </SidebarTrigger>
-            
-            <Button variant="ghost" size="sm" onClick={logout}>
-              <LogOut className="w-4 h-4 mr-2" />
-              Logout
-            </Button>
-          </header>
-          
-          {/* Main Content */}
-          <main className="flex-1 overflow-auto">
-            {children}
-          </main>
+    <>
+      <SidebarProvider>
+        <div className="min-h-screen flex w-full bg-background">
+          <AppSidebar />
+
+          <div className="flex-1 flex flex-col bg-background">
+            {/* Top Header */}
+            <header className="bg-white shadow-sm border-b h-14 flex items-center justify-between px-4">
+              <SidebarTrigger className="p-2 rounded-md">
+                <Menu className="w-4 h-4" />
+              </SidebarTrigger>
+
+              <Button variant="ghost" size="sm" onClick={logout}>
+                <LogOut className="w-4 h-4 mr-2" />
+                Logout
+              </Button>
+            </header>
+
+            {/* Main Content */}
+            <main className="flex-1 overflow-auto">
+              {children}
+            </main>
+          </div>
         </div>
-      </div>
-    </SidebarProvider>
+      </SidebarProvider>
+    </>
   );
 };
 
