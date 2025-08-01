@@ -85,7 +85,7 @@ const Login: React.FC = () => {
 
             {/* Right Side - Login Form */}
             <div className="flex justify-center">
-              <Card className="w-full max-w-md shadow-2xl border-0 bg-white/95 backdrop-blur">
+              <Card className="w-full max-w-md shadow-md border bg-white/95 backdrop-blur">
                 <CardHeader className="text-center space-y-4">
                   <CardTitle className="text-2xl font-bold">Welcome Back</CardTitle>
                   <CardDescription className="text-base">

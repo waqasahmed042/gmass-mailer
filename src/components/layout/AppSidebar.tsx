@@ -69,7 +69,7 @@ export const AppSidebar: React.FC = () => {
           </div>
 
           {/* User Info */}
-          {user && (
+          {/* {user && (
             <div className="p-4 border-b">
               <div className="flex items-center space-x-3">
                 <img
@@ -90,7 +90,7 @@ export const AppSidebar: React.FC = () => {
                 </div>
               </div>
             </div>
-          )}
+          )} */}
 
           {/* Main Navigation */}
           <SidebarGroup className="flex-1">
